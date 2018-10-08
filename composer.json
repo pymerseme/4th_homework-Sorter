@@ -1,0 +1,17 @@
+{
+    "name": "pymerseme/sorter",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Alexander Ordin",
+            "email": "pymerseme@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
