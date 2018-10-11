@@ -7,22 +7,22 @@
  * Time: 17:09
  */
 
-use App\AscMethod;
-use App\DesMethod;
+use App\{Sorter, AscMethod, DesMethod, AscKeyMethod, DesKeyMethod, NullMethod};
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $numbers = [1, 4, 5, 7, 8, 2, 6, 3];
 $strings = ["apples", "strawberries", "babanas", "oranges", "lemons"];
 
-$ascSortedNumbers = new AscMethod($numbers);
-$desSortedNumbers = new DesMethod($numbers);
+$sorted_numbers = new Sorter($numbers, new NullMethod);
 
-$ascSortedStrings = new AscMethod($strings);
-$desSortedStrings = new DesMethod($strings);
+$sorted_numbers->sorting();
+echo $sorted_numbers . \PHP_EOL;
 
-\var_dump($ascSortedNumbers->sort());
-\var_dump($desSortedNumbers->sort());
+$sorted_numbers->setMethod(new AscMethod);
+echo $sorted_numbers . \PHP_EOL;
+$sorted_numbers->sorting();
+echo $sorted_numbers . \PHP_EOL;
 
-\var_dump($ascSortedStrings->sort());
-\var_dump($desSortedStrings->sort());
+$sorted_numbers->setMethod(new DesMethod);
+echo $sorted_numbers . \PHP_EOL;

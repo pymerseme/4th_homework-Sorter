@@ -8,11 +8,11 @@
 
 namespace App;
 
-class AscMethod implements SorterInterface
+class AscKeyMethod implements SorterInterface
     {
         public function sort(array $data): array
         {
-            \sort($data);
+            \ksort($data);
             return $data;
         }
     }

@@ -8,11 +8,11 @@
 
 namespace App;
 
-class DesMethod extends Sorter
+class DesMethod implements SorterInterface
     {
-        public function sort()
+        public function sort(array $data): array
         {
-            \arsort($this->data);
-            return $this->data;
+            \rsort($data);
+            return $data;
         }
     }
